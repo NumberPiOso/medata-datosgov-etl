@@ -40,6 +40,11 @@ conda activate medata_integration
 
 ## Considerations
 
+### Data considerations
+
+- Age is considered as a dimension by itself to allow future flexibility and
+possible roll-ups
+
 ### Staging
 
 Since actually this project does not have any funding, using the local
@@ -89,7 +94,7 @@ All data referenced in this project is from Medellín, Colombia.
 ## Future
 
 - Integrate neighborhood data. We could use the data in (Arcgis medellin.gov.co)[https://www.medellin.gov.co/mapas/rest/services/ServiciosPlaneacion/POT48_Base/MapServer]
-- 
+- Create dim_date and dim_hour as suggested in [[1]](#1)
 
 ## References
 
