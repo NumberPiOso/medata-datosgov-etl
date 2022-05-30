@@ -40,7 +40,14 @@ conda activate medata_integration
 
 ## Considerations
 
-### Database
+### Staging
+
+Since actually this project does not have any funding, using the local
+filesystem is prefered. However, when someone else joins the project
+this staging zone will be to be migrated to the cloud. Something like an `S3`
+in aws.
+
+### Data warehouse
 
 Since the data used is not massive, 113,2 MB approx in total and we
 do not plan to have a lot of queries over the data.
