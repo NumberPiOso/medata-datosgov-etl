@@ -26,3 +26,4 @@ dependencies:
   pip:
     - geopandas
     - types-requests # requests and mypy
+    - GeoAlchemy2==0.10.0
