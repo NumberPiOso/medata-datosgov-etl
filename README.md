@@ -42,16 +42,47 @@ conda activate medata_integration
 
 ### Database
 
-Since the 
+Since the data used is not massive, 113,2 MB approx in total and we
+do not plan to have a lot of queries over the data.
+
+An AWS RDS with postgresql was prefered to be the database. This is because
+RDS is much cheaper than Redshift. However, there are multiple cases in which
+we could change the RDS by a Redshift database. Some cases are
+- The data was increased by 100x.
+- The database needed to be accessed by 100+ people.
+  
+This change from Postgres to Redshift do not require a lot of modifications
+in code.
+
+### Transformation
+
+The transformation is done by [pandas](https://pandas.pydata.org/). However,
+in case the datasets get very big and the process gets slower, we could change
+this for [apache spark](https://spark.apache.org/)
+
+### Orchestration
+
+Now, the project is executed manually. But in case the information of the
+homicides and Thefts needs to be accessed manually. This etl process could
+easily be adapted to an orchestration tool such as Airflow or
+AWS step functions which could run the pipelines would be run
+on a daily basis by 7 am every day.
+
 
 
 ## Data
 All data referenced in this project is from Medellín, Colombia.
 
-[Thefts recorded by the National Police committed against people in public spaces. (Medata)](http://medata.gov.co/dataset/hurto-persona)
-[Homicides registered by the review and validation table for homicide cases. (Medata)](http://medata.gov.co/dataset/homicidio)
-[TMap of Postal Codes - Municipality of Medellín (datos.gov)](https://www.datos.gov.co/Ordenamiento-Territorial/Mapa-de-C-digos-Postales-Municipio-de-Medell-n/9z4i-tgzy)
+- [Thefts recorded by the National Police committed against people in public spaces. (Medata)](http://medata.gov.co/dataset/hurto-persona)
+- [Homicides registered by the review and validation table for homicide cases. (Medata)](http://medata.gov.co/dataset/homicidio)
+- [TMap of Postal Codes - Municipality of Medellín (datos.gov)](https://www.datos.gov.co/Ordenamiento-Territorial/Mapa-de-C-digos-Postales-Municipio-de-Medell-n/9z4i-tgzy)
+- [Geomedellin comunas](https://geomedellin-m-medellin.opendata.arcgis.com/datasets/7a8ad9f85799453e9dab4dc0c8c80bb3_3/api)
 
+
+## Future
+
+- Integrate neighborhood data. We could use the data in (Arcgis medellin.gov.co)[https://www.medellin.gov.co/mapas/rest/services/ServiciosPlaneacion/POT48_Base/MapServer]
+- 
 
 ## References
 

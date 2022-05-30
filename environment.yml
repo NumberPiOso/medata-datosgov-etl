@@ -7,6 +7,7 @@ dependencies:
   - conda-forge::pip
   - conda-forge::numpy
   - conda-forge::openpyxl
+  - conda-forge::requests
   - conda-forge::pandas
   - conda-forge::jupyterlab
   - conda-forge::ipython
@@ -22,3 +23,6 @@ dependencies:
   - conda-forge::pep257
   - conda-forge::mypy
   - conda-forge::pydocstyle
+  pip:
+    - geopandas
+    - types-requests # requests and mypy
