@@ -6,21 +6,27 @@ This is the final project of the udacity's
 In this project, information of homicides and thefts in the city of Medellin
 are integrated with the information of the postal codes.  
 
-The code separates in an ETL process which extracts data from 
-[medata](http://medata.gov.co/) and
+The code separates in an ETL process which extracts data of homicides and
+steals from  [medata](http://medata.gov.co/) with data of political divisions
+of the city downloaded from
 [datos.gov](https://www.datos.gov.co/Ordenamiento-Territorial/)
 and load them into a Postgres Database.  
   
 By using Kimball's data modeling technique [[1]](#1) dimensions and fact tables
 are createda and saved into the star schema.
 
+In the end data scientists and analysts will easily produce reports such as
+[example notebook](science/demonstration.ipynb)
+![](imgs/kills_by_comuna.png)
+
 ## Code structure
-📦data
-📦etl (Extraction, transformation and loading processes)
-📦science (Some demonstrations of what can be done with the data)
-📜.env (database environment variables)
-📜README.md (This file)
-📜environment.yml (Python environment)
+📦data  
+📦etl (Extraction, transformation and loading processes)  
+📦science (Some demonstrations of what can be done with the data)  
+📜.env (database environment variables)  
+📜README.md (This file)  
+📜environment.yml (Python environment)  
+
 
 ## Developing
 
