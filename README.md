@@ -21,7 +21,7 @@ In the end data scientists and analysts will easily produce reports such as
 
 ## Code structure
 📦data  
-📦etl (Extraction, transformation and loading processes)  
+📦etl (Extraction, transformation, loading and testing processes)  
 📦science (Some demonstrations of what can be done with the data)  
 📜.env (database environment variables)  
 📜README.md (This file)  
@@ -43,6 +43,15 @@ To create and use the anaconda environment
 conda env create -f environment.yml
 conda activate medata_integration
 ```
+## Testing
+
+Currently, multiple test that assert data quality are implemented.
+A total of 9 tests were implemented in folder  
+📦etl/tests  
+which test for:
+- Dimension keys are not null.
+- The rows count of the fact_tables does not change afther joining with
+dim_tables
 
 ## Considerations
 
