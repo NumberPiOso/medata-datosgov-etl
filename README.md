@@ -98,7 +98,47 @@ on a daily basis by 7 am every day.
 
 
 ## Data
-All data referenced in this project is from Medellín, Colombia.
+The final `star` schema is represented in the following image:
+
+![](imgs/schema_star.png)
+
+- dim_gender
+  - gender_key
+  - sexo: Sex description
+- dim_age
+  - age_key: age 
+  - age_group: Agrupation of age groups
+- dim_comuna
+  - COMUNA_KEY: Surrogate ID
+  - CODIGO: Comuna code
+  - NOMBRE: Comuna name
+  - IDENTIFICACION: ID comuna
+  - SUBTIPO_COMUNACORREGIMIENTO: bool is it comuna or corregimiento
+  - SHAPE.AREA
+  - SHAPE.LEN
+  - geometry
+
+- fact_kill: Fact table where the grain is the kill registered.
+  - The date when the event happened
+  - qty   Degenerate summing dimension. One kill always. Used for roll-ups.
+  - latitude
+  - longitude
+  - gender_ley
+  - age_key
+  - comuna_key
+
+- fact_steal: Fact table where the grain is the steal registered.
+  - The date when the event happened
+  - qty   Degenerate summing dimension. One steal always. Used for roll-ups.
+  - latitude
+  - longitude
+  - gender_ley
+  - age_key
+  - comuna_key
+
+### References
+
+All data referenced in this project is from Medellín, Colombia.  
 
 - [Thefts recorded by the National Police committed against people in public spaces. (Medata)](http://medata.gov.co/dataset/hurto-persona)
 - [Homicides registered by the review and validation table for homicide cases. (Medata)](http://medata.gov.co/dataset/homicidio)
